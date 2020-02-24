@@ -1,7 +1,6 @@
 {
   "name": "@deepexi-devops/vue-component",
   "version": "0.1.0",
-  "private": true,
   "main": "dist/vue-component.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
