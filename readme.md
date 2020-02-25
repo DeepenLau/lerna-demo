@@ -4,11 +4,16 @@
 单仓库多包版本管理库
 [官网](https://lerna.js.org/)
 
+## 初始化
+```
+lerna init
+```
+
 ## 添加模块
 
 1. 在 packages 目录下手动创建目录，并初始化 package.json
 `yarn init -y`
-2. 并且 name 字段的命名增加命名空间 如：`@deepexi-devops/module-1`
+2. 并且 name 字段的命名增加命名空间 如：`@deepexi-devops/module-1` (建议目录名和 name 字段保持一致)
 3. main 字段指定好改包的导出文件，一般是代码转义打包后的压缩文件
 
 > 也可以通过 `lerna create` 命令创建
@@ -19,8 +24,10 @@
    例如在 packages/vue-component-2/src/App.vue 下应用 vue-component 模块：`import vueComponent from '@deepexi-devops/vue-component'`
 
 ## 模块版本管理的两种模式
-> 这里的默认前提是 git 处于完全提交状态，没有暂存的内容，因为会自动操作 git 提交版本号信息
+> 这里的默认前提是 git 处于完全提交状态，没有暂存的内容，因为会自动操作 git 提交版本号信息和打 tag
 > 不想自动操作 git 命令的话，加上 --skip-git
+
+> 记得先切回官方 npm 仓库并且登陆
 
 执行 `lerna publish` 的相关行为
 
@@ -65,9 +72,18 @@ workspace 主流用的是 yarn 的 workspace 功能
 参考[官网](https://lerna.js.org/)或者直接打印 `lerna --help`
 
 ## 注意点
-1.如果模块 package.json 里面有个 private: true 的字段
-  执行 `lerna list` 的时候就会扫描不出这个模块
+1.如果 packages 目录下模块 package.json 里面有个 private: true 的字段
+  执行 `lerna list` 的时候就会扫描不出这个模块，并且无法发布
 
 2.首次执行 `lerna publish` 可能会出现
   `You must sign up for private packages`
   这个问题主要在于首次发包，需要先进入这个包，手动单独发一次这个包，执行 `npm publish --access public`
+
+3.如果模块之间有依赖，记得先安装上，否则发上npm，别人下载使用的那个包的时候，会丢失这个包
+
+```shell
+# e.g. install @deepexi-devops/vue-component into @deepexi-devops/vue-component-2
+lerna add @deepexi-devops/vue-component --scope=@deepexi-devops/vue-component-2
+```
+这样在 lerna publish 发包的时候
+@deepexi-devops/vue-component-2 的 package.json 里面的 @deepexi-devops/vue-component 依赖版本会自动更新到最新

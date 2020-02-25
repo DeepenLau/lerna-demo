@@ -1,5 +1,5 @@
 {
-  "name": "root",
+  "name": "deepexi-devops-public",
   "private": true,
   "workspaces": [
     "packages/*"
