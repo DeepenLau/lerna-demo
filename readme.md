@@ -33,6 +33,34 @@
 `"version": "independent"` 独立模式
 `"version": "1.0.0"` 统一模式，数字为具体的版本号
 
+
+## workspace
+workspace 主流用的是 yarn 的 workspace 功能
+为的是在 yarn install 的时候，自动 link 工作区的包，而不是去远程下载回来
+并且为 link 增加作用域，避免使全局的 link 混乱，影响其他项目
+[yarn workspace 官网介绍](https://classic.yarnpkg.com/zh-Hans/docs/workspaces)
+
+配置：
+```json
+// lerna.json
+{
+  "npmClient": "yarn",
+  "useWorkspaces": true
+}
+```
+
+```json
+// root package.json
+{
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+}
+```
+
+> 所以目前的主流用法都是 lerna 管理版本和发包，yarn 管理依赖 二者结合使用
+
 ## 更多用法
 参考[官网](https://lerna.js.org/)或者直接打印 `lerna --help`
 

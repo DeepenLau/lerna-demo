@@ -15,7 +15,7 @@ export default {
     HelloWorld
   },
   mounted() {
-    console.log(sum(1,5))
+    console.log(sum(2,5))
   }
 }
 </script>
