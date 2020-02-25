@@ -9,6 +9,7 @@
     "build-lib": "vue-cli-service build --target lib --name vue-component ./src/components/HelloWorld.vue"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "core-js": "^3.6.4",
     "vue": "^2.6.11"
   },
