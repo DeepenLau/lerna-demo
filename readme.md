@@ -5,8 +5,9 @@
 [官网](https://lerna.js.org/)
 
 ## 初始化
-```
-lerna init
+```shell
+# 安装依赖 + link local packages
+lerna bootstrap
 ```
 
 ## 添加模块
