@@ -1,13 +1,13 @@
 {
   "name": "@deepexi-devops/vue-component-2",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@deepexi-devops/vue-component": "^0.1.1",
+    "@deepexi-devops/vue-component": "^0.1.2",
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
     "vue": "^2.6.11"
