@@ -11,7 +11,5 @@ yarn add @deepexi-devops/utils
 ## 使用
 
 ```js
-import { sum } from '@deepexi-devops/utils'
-
-// TODO: DEMONSTRATE API
+import sum from '@deepexi-devops/utils/lib/sum'
 ```
