@@ -9,6 +9,7 @@ module.exports = {
       format: 'es',
     },
   ],
+  browser: true,
   external: ['dayjs', 'dayjs/plugin/relativeTime', 'dayjs/locale/zh-cn'],
   plugins: [
     babel({
