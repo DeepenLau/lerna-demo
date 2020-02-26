@@ -1,0 +1,61 @@
+Arguments: 
+  /usr/local/Cellar/node/12.6.0/bin/node /usr/local/Cellar/yarn/1.17.3/libexec/bin/yarn.js build
+
+PATH: 
+  /Users/deepenlau/developer/flutter/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/deepenlau/developer/flutter/bin
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  12.6.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/deepenlau/developer/code/deepexi/deepexi-devops-public/packages/utils/package.json: Unexpected token / in JSON at position 213
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:304:30)
+      at /usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:315:13
+
+npm manifest: 
+  {
+    "name": "@deepexi-devops/utils",
+    "version": "0.0.1",
+    "description": "> TODO: description",
+    "author": "liupengdi<liupengdi@deepexi.com>",
+    "homepage": "",
+    "license": "ISC",
+    "main": "lib/index.js",
+    // "module": true,
+    "directories": {
+      "lib": "lib",
+      "test": "__tests__"
+    },
+    "files": [
+      "lib"
+    ],
+    "publishConfig": {
+      "access": "public"
+    },
+    "repository": {
+      "type": "git",
+      "url": ""
+    },
+    "scripts": {
+      "build": "rollup --config rollup.config.js src/index.js",
+      "test": "echo \"Error: run tests from root\" && exit 1"
+    },
+    "devDependencies": {
+      "rollup": "^1.31.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
